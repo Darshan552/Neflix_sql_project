@@ -154,11 +154,11 @@ where
 ### 9. Count the Number of Content Items in Each Genre
 
 ```sql
-SELECT 
-    UNNEST(STRING_TO_ARRAY(listed_in, ',')) AS genre,
-    COUNT(*) AS total_content
-FROM netflix
-GROUP BY 1;
+select 
+    unnest(string_to_array(listed_in, ',')) as genre,
+	count(show_id) as total_content
+from netflix
+group by 1;
 ```
 
 **Objective:** Count the number of content items in each genre.
