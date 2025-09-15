@@ -209,10 +209,13 @@ where
 ### 13. Find How Many Movies Actor 'Salman Khan' Appeared in the Last 10 Years
 
 ```sql
-SELECT * 
-FROM netflix
-WHERE casts LIKE '%Salman Khan%'
-  AND release_year > EXTRACT(YEAR FROM CURRENT_DATE) - 10;
+
+select *
+from netflix
+where
+    casts ILIKE '%Salman Khan%'
+	AND
+	release_year > EXTRACT(YEAR from current_date) - 10;
 ```
 
 **Objective:** Count the number of movies featuring 'Salman Khan' in the last 10 years.
