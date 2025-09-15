@@ -197,9 +197,11 @@ where
 ### 12. Find All Content Without a Director
 
 ```sql
-SELECT * 
-FROM netflix
-WHERE director IS NULL;
+
+select *
+from netflix
+where 
+    director is NULL;
 ```
 
 **Objective:** List content that does not have a director.
