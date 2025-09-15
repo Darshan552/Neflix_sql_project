@@ -45,7 +45,7 @@ CREATE TABLE netflix
 
 ```sql
 SELECT 
-    type,
+    type ,
     COUNT(*)
 FROM netflix
 GROUP BY 1;
