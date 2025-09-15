@@ -183,9 +183,13 @@ order by avg_content_per_year desc limit 5;
 ### 11. List All Movies that are Documentaries
 
 ```sql
-SELECT * 
-FROM netflix
-WHERE listed_in LIKE '%Documentaries';
+
+select *
+from netflix
+where 
+    type = 'Movie'
+	AND
+	listed_in ILIKE '%Documentaries%';
 ```
 
 **Objective:** Retrieve all movies classified as documentaries.
