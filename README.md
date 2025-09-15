@@ -104,11 +104,12 @@ order by 2 desc limit 5;
 ### 5. Identify the Longest Movie
 
 ```sql
-SELECT 
-    *
-FROM netflix
-WHERE type = 'Movie'
-ORDER BY SPLIT_PART(duration, ' ', 1)::INT DESC;
+select 
+     *
+from netflix
+where type = 'Movie'
+      AND
+	  duration = (select max(duration) from netflix);
 ```
 
 **Objective:** Find the movie with the longest duration.
