@@ -141,10 +141,12 @@ where
 ### 8. List All TV Shows with More Than 5 Seasons
 
 ```sql
-SELECT *
-FROM netflix
-WHERE type = 'TV Show'
-  AND SPLIT_PART(duration, ' ', 1)::INT > 5;
+select *
+from netflix
+where
+    type ='TV Show'
+	AND
+	split_part(duration, ' ',1)::numeric > 5;
 ```
 
 **Objective:** Identify TV shows with more than 5 seasons.
