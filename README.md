@@ -223,14 +223,16 @@ where
 ### 14. Find the Top 10 Actors Who Have Appeared in the Highest Number of Movies Produced in India
 
 ```sql
-SELECT 
-    UNNEST(STRING_TO_ARRAY(casts, ',')) AS actor,
-    COUNT(*)
-FROM netflix
-WHERE country = 'India'
-GROUP BY actor
-ORDER BY COUNT(*) DESC
-LIMIT 10;
+
+select 
+     unnest(string_to_array(casts, ',')) as actors,
+	 count(*) as total_content
+from netflix
+where 
+     country ILIKE '%India%'
+group by 1
+order by 2 desc
+limit 10;
 ```
 
 **Objective:** Identify the top 10 actors with the most appearances in Indian-produced movies.
